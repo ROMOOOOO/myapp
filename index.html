@@ -5,7 +5,6 @@
   <iframe src="https://stripchat.com" width="800" height="600"></iframe>
 
   <h2>Mensajes capturados:</h2>
-  <pre id="output"></pre>
 
   <script>
     window.addEventListener("message", (event) => {
@@ -14,7 +13,9 @@
       output.textContent += "Origen: " + event.origin + "\n";
       output.textContent += "Datos: " + JSON.stringify(event.data, null, 2) + "\n";
     });
+    let ventana = window.open("https://stripchat.com");
   </script>
 
+  <pre id="output"></pre>
 </body>
 </html>

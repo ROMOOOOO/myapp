@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Mi página</title>
-</head>
 <body>
-  <h1>Hola mundo</h1>
-  <p>Mi primera página en GitHub Pages</p>
+
+  <!-- Mete tu app vulnerable en un iframe -->
+  <iframe src="https://tuapp.com" width="800" height="600"></iframe>
+
+  <h2>Mensajes capturados:</h2>
+  <pre id="output"></pre>
+
+  <script>
+    window.addEventListener("message", (event) => {
+      const output = document.getElementById("output");
+      output.textContent += "\n--- Mensaje ---\n";
+      output.textContent += "Origen: " + event.origin + "\n";
+      output.textContent += "Datos: " + JSON.stringify(event.data, null, 2) + "\n";
+    });
+  </script>
+
 </body>
 </html>
